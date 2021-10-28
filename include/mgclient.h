@@ -915,6 +915,10 @@ MGCLIENT_EXPORT mg_local_time *mg_local_time_copy(
 /// Destroys the given local time.
 MGCLIENT_EXPORT void mg_local_time_destroy(mg_local_time *local_time);
 
+/// Creates a mg_date_time from the given `seconds`, `nanoseconds` and `tz_offset_minutes`.
+/// \return a pointer to a mg_date_time or NULL if an error occurred.
+MGCLIENT_EXPORT mg_date_time *mg_date_time_make(int64_t seconds, int64_t nanoseconds, int64_t tz_offset_minutes);
+
 /// Returns seconds since Unix epoch.
 MGCLIENT_EXPORT int64_t mg_date_time_seconds(const mg_date_time *date_time);
 

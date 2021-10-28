@@ -1649,6 +1649,17 @@ mg_date *mg_date_make(int64_t days) {
   return date;
 }
 
+mg_date_time *mg_date_time_make(int64_t seconds, int64_t nanoseconds, int64_t tz_offset_minutes) {
+  mg_date_time *date_time = mg_date_time_alloc(&mg_system_allocator);
+  if (!date_time) {
+    return NULL;
+  }
+  date_time->seconds = seconds;
+  date_time->nanoseconds = nanoseconds;
+  date_time->tz_offset_minutes = tz_offset_minutes;
+  return date_time;
+}
+
 mg_local_time *mg_local_time_make(int64_t nanoseconds) {
   mg_local_time *lt = mg_local_time_alloc(&mg_system_allocator);
   if (!lt) {
