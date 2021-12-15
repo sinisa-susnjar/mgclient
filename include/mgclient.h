@@ -267,8 +267,8 @@ typedef struct mg_date_time_zone_id mg_date_time_zone_id;
 
 /// \brief Represents date and time without its time zone.
 ///
-/// Date is defined with seconds since the Unix epoch.
-/// Time is defined with nanoseconds since midnight.
+/// Date and time are defined as seconds since the Unix epoch.
+/// Subseconds are kept as nanoseconds.
 typedef struct mg_local_date_time mg_local_date_time;
 
 /// \brief Represents a temporal amount which captures the difference in time
